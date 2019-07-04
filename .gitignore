@@ -1,0 +1,10 @@
+node_modules
+dist
+.vscode
+.DB_store
+.DS_store
+.DS_Store
+*.wpy___jb_tmp___
+.wepycache
+.git
+*.log
