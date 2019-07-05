@@ -14,6 +14,7 @@
 3. 通过`npm link`链接到全局包中，供本地测试使用
 
 ## 简化分析webpack打包的bundle文件
+[官方demo] (https://github.com/chinanf-boy/minipack-explain)
 ```js
 (function (modules) { // webpackBootstrap
     // The module cache
