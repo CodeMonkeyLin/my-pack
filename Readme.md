@@ -66,11 +66,11 @@
 
 webpack源码从 Entry 开始读取文件，根据文件类型和配置的 Loader 对文件进行编译，将loader处理后的文件通过acorn抽象成抽象语法树AST,然后遍历AST，递归分析构建该模块的所有依赖。
 
-[ast介绍](https://juejin.im/post/5bff941e5188254e3b31b424)
-[webpack源码之ast简介](https://segmentfault.com/a/1190000014178462)
+- [ast介绍](https://juejin.im/post/5bff941e5188254e3b31b424)
+- [webpack源码之ast简介](https://segmentfault.com/a/1190000014178462)
 
 ## node模板
 
 利用普通的 JavaScript 代码生成html等文件
-[ejs](https://ejs.bootcss.com/)
-[art-temmplate](https://aui.github.io/art-template/zh-cn/docs/)
+- [ejs](https://ejs.bootcss.com/)
+- [art-temmplate](https://aui.github.io/art-template/zh-cn/docs/)
