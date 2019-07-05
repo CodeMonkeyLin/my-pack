@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "bin": {
-        "zeaho-pack": "./bin/zeaho-pack.js"
+        "my-pack": "./bin/my-pack.js"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
