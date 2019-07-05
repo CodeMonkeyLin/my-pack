@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "bin": {
-        "my-pack": "./bin/my-pack.js"
+        "my-pack": "./bin/my-pack.js",
+        "mini-pack": "./bin/my-pack.js"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
