@@ -76,3 +76,51 @@ webpack源码从 Entry 开始读取文件，根据文件类型和配置的 Loade
 利用普通的 JavaScript 代码生成html等文件
 - [ejs](https://ejs.bootcss.com/)
 - [art-temmplate](https://aui.github.io/art-template/zh-cn/docs/)
+
+## loader与plugins区别
+### loader
+loader 用于对模块的源代码进行转换。loader 可以使你在 import 或"加载"模块时预处理文件。因此，loader 类似于其他构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。loader 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript，或将内联图像转换为 data URL。loader 甚至允许你直接在 JavaScript 模块中 import CSS文件！
+### plugins
+插件是 webpack 的支柱功能。webpack 自身也是构建于，你在 webpack 配置中用到的相同的插件系统之上！
+
+插件目的在于解决 loader 无法实现的其他事
+
+### loader的分类
+
+不同类型的loader加载时优先级不同，优先级顺序遵循：
+
+前置 > 行内 > 普通 > 后置
+
+pre: 前置loader
+
+post: 后置loader
+
+指定Rule.enforce的属性即可设置loader的种类，不设置默认为普通loader
+
+### 在my-pack中添加loader的功能
+
+通过配置loader和手写loader可以发现，其实webpack能支持loader，主要步骤如下：
+
+1. 读取webpack.config.js配置文件的module.rules配置项，进行倒序迭代（rules的每项匹配规则按倒序匹配）
+2. 根据正则匹配到对应的文件类型，同时再批量导入loader函数
+3. 倒序迭代调用所有loader函数（loader的加载顺序从右到左，也是倒叙）
+4. 最后返回处理后的代码
+
+在实现my-pack的loader功能时，同样也可以在加载每个模块时，根据rules的正则来匹配是否满足条件，如果满足条件则加载对应的loader函数并迭代调用
+
+depAnalyse()方法中获取到源码后，读取loader：
+
+```js
+let rules = this.config.module.rules
+for (let i = rules.length - 1; i >= 0; i--) {
+    // console.log(rules[i])
+    let {test, use} = rules[i]
+    if (test.test(modulePath)) {
+        for (let j = use.length - 1; j >= 0; j--) {
+            let loaderPath = path.join(this.root, use[j])
+            let loader = require(loaderPath)
+            source = loader(source)
+        }
+    }
+}
+```
