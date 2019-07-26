@@ -7,16 +7,23 @@ module.exports = {
         filename: 'bundle.js'
     },
     module: {
-        rules: [{
-            test: /\.js$/,
-            use: ['./loaders/loader1.js', './loaders/loader2.js', './loaders/loader3.js'],
-            // use: {
-            //     loader: './loaders/loader1.js',
-            //     options: {
-            //         name: '那一天'
-            //     }
+        //pre>inline>normal>post
+        rules: [
+            {
+                test: /\.js$/, use: {
+                    loader: './loaders/loader1.js',
+                    options: {
+                        name: '那一夜'
+                    }
+                },
+
+            }
+
+            // {
+            //     test: /\.js$/,
+            // use: ['./loaders/loader1.js', './loaders/loader2.js', './loaders/loader3.js'],
             // },
-        }]
+        ]
     },
     mode: 'development'
 }
