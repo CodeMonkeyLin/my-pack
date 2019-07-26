@@ -140,12 +140,12 @@ Compiler 和 Compilation 都继承自 Tapable，可以直接在 Compiler 和 Com
 
 ```js
 compiler.hooks.emit.tap(pluginName, (stats) => {
-            console.log('hello 明天')
-        })
+    console.log('hello 明天')
+})
 
-        compiler.hooks.afterEmit.tap(pluginName, (stats) => {
-            console.log('hello 后天')
-        })
+compiler.hooks.afterEmit.tap(pluginName, (stats) => {
+    console.log('hello 后天')
+})
 ```
 
 参考文章 <br>
