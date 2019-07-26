@@ -29,10 +29,10 @@ module.exports = {
     },
     plugins: [
         new HelloWorldPlugin(),
-        // new HTMLPlugin({
-        //     filename: 'index.html',
-        //     template: './src/index.html'
-        // })
+        new HTMLPlugin({
+            filename: 'index.html',
+            template: './src/index.html'
+        })
     ],
     mode: 'development'
 }
