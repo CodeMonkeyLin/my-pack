@@ -1,22 +1,23 @@
 {
-    "name": "zeaho-pack",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "bin": {
-        "my-pack": "./bin/my-pack.js",
-        "mini-pack": "./bin/my-pack.js"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "@babel/generator": "^7.4.4",
-        "@babel/parser": "^7.4.5",
-        "@babel/traverse": "^7.4.5",
-        "ejs": "^2.6.1"
-    }
+  "name": "zeaho-pack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "my-pack": "./bin/my-pack.js",
+    "mini-pack": "./bin/my-pack.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/generator": "^7.4.4",
+    "@babel/parser": "^7.4.5",
+    "@babel/traverse": "^7.4.5",
+    "ejs": "^2.6.1",
+    "tapable": "^1.1.3"
+  }
 }
